@@ -1,0 +1,19 @@
+apiVersion: v1   
+kind: Service   
+metadata:  
+ name: lykops-sfs  
+ labels:  
+   software: apache  
+   project: lykops  
+   app: lykops-sfs  
+   version: v1  
+spec:   
+ ports:   
+ - port: 80   
+   name: apache   
+ clusterIP: None   
+ selector:   
+   software: apache  
+   project: lykops  
+   app: lykops-sfs  
+   version: v1  

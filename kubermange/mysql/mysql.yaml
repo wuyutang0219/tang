@@ -1,0 +1,23 @@
+---
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: mysql
+spec:
+  replicas: 2
+  selector:
+    name: mysql
+  template:
+    metadata:
+      labels:
+        name: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: home.vimll.com:5000/mysql:v1
+        ports:
+        - containerPort: 3306
+          protocol: TCP
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: "hello123"

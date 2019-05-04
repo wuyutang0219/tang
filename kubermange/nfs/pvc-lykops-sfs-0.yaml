@@ -1,0 +1,14 @@
+apiVersion: v1  
+kind: PersistentVolumeClaim  
+metadata:  
+ name: pvc-lykops-sfs-0  
+ labels:  
+   type: nfs  
+   app: pvc  
+   version: v1  
+spec:  
+ accessModes:  
+   - ReadWriteMany  
+ resources:  
+   requests:  
+     storage: 1Gi  

@@ -1,0 +1,18 @@
+apiVersion: v1  
+kind: PersistentVolume  
+metadata:  
+ name: pv-lykops-sfs-0  
+ labels:  
+   type: nfs  
+   app: pv  
+   version: v1  
+spec:  
+ capacity:  
+   storage: 1Gi  
+ accessModes:  
+   - ReadWriteMany  
+ persistentVolumeReclaimPolicy: Recycle  
+  nfs:  
+   path: /data 
+   server: 192.169.9.8  
+   readOnly: false  
